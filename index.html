@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية | Cyber Note</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <title>سياسة الخصوصية | Privacy Policy | Cyber Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0f172a;
@@ -17,7 +17,7 @@
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.8;
@@ -33,7 +33,17 @@
             margin: 40px 0;
         }
 
-        /* زر العودة للموقع الرسمي للتوافق مع شروط جوجل */
+        /* شريط التحكم العلوي */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* زر العودة للموقع الرسمي */
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -42,7 +52,6 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            margin-bottom: 25px;
             transition: all 0.3s ease;
             padding: 8px 16px;
             border: 1px solid rgba(0, 198, 255, 0.2);
@@ -53,6 +62,35 @@
         .back-link:hover {
             background: rgba(0, 198, 255, 0.1);
             transform: translateY(-2px);
+        }
+
+        /* مبدل اللغة الأنيق */
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-grad);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
         }
 
         header {
@@ -88,6 +126,7 @@
             margin-bottom: 35px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding-bottom: 25px;
+            transition: opacity 0.4s ease;
         }
 
         section:last-child {
@@ -145,78 +184,173 @@
             font-size: 0.85rem;
         }
 
+        /* إعدادات اتجاه اللغة الإنجليزية */
+        html[lang="en"] body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html[lang="en"] h2::before {
+            order: -1;
+        }
+
+        html[lang="en"] ul {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        /* إخفاء المحتوى بناءً على اللغة المحددة */
+        [lang="en"] .lang-ar-content { display: none !important; }
+        [lang="ar"] .lang-en-content { display: none !important; }
+
         @media (max-width: 600px) {
             .card { padding: 25px; }
             header h1 { font-size: 2.2rem; }
             body { padding: 10px 0; }
+            .top-bar { justify-content: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- رابط التوافق مع شروط جوجل للربط بين الرئيسية والسياسة -->
-        <a href="https://arc56a.github.io/" class="back-link">
-            <span>&rarr;</span> العودة للموقع الرسمي لـ Cyber Note
-        </a>
+        <div class="top-bar">
+            <!-- رابط العودة للموقع الرسمي بالتوافق مع شروط جوجل -->
+            <a href="https://arc56a.github.io/" class="back-link" id="backLink">
+                <span class="lang-ar-content">&rarr; العودة للموقع الرسمي</span>
+                <span class="lang-en-content">&larr; Return to Official Site</span>
+            </a>
+
+            <!-- مبدل اللغة تفاعلي وسلس -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('ar')" id="btn-ar">العربية</button>
+                <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">English</button>
+            </div>
+        </div>
 
         <header>
             <h1>Cyber Note</h1>
-            <p>سياسة الخصوصية والأمان وحماية البيانات</p>
+            <p class="lang-ar-content">سياسة الخصوصية والأمان وحماية البيانات</p>
+            <p class="lang-en-content">Privacy, Security & Data Protection Policy</p>
         </header>
 
         <div class="card">
+            <!-- 1. Introduction / مقدمة -->
             <section>
-                <h2>1. مقدمة</h2>
-                <p>نحن في <span class="highlight">Cyber Note</span> نضع خصوصية المستخدم الفردية وأمان بياناته الرقمية على رأس أولوياتنا. هذا المستند يوضح بشكل شفاف كيف يتعامل التطبيق مع بياناتك، ويوضح طبيعة الصلاحيات الحساسة المطلوبة، وميزات حماية الخصوصية التي قمنا ببنائها وتكاملها مع سحابة Google Drive.</p>
+                <h2 class="lang-ar-content">1. مقدمة</h2>
+                <h2 class="lang-en-content">1. Introduction</h2>
+                
+                <p class="lang-ar-content">نحن في <span class="highlight">Cyber Note</span> نضع خصوصية المستخدم الفردية وأمان بياناته الرقمية على رأس أولوياتنا. هذا المستند يوضح بشكل شفاف كيف يتعامل التطبيق مع بياناتك، ويوضح طبيعة الصلاحيات الحساسة المطلوبة، وميزات حماية الخصوصية التي قمنا ببنائها وتكاملها مع سحابة Google Drive.</p>
+                <p class="lang-en-content">We at <span class="highlight">Cyber Note</span> prioritize user privacy and digital data security above all else. This document transparently explains how our application handles your data, the nature of the sensitive permissions requested, and the privacy features we have built in integration with Google Drive.</p>
             </section>
 
+            <!-- 2. Drive Scopes / نطاق الوصول المحدود -->
             <section>
-                <h2>2. نطاق الوصول المحدود (Drive Scopes)</h2>
-                <p>يطلب التطبيق صلاحية وصول محددة ومقيدة للغاية وهي <span class="highlight">"drive.file"</span>. هذا يعني قانونياً وتقنياً أن التطبيق **لا يمكنه** رؤية أو الوصول أو تعديل أي ملفات شخصية أو مستندات سابقة موجودة في حسابك على Google Drive. صلاحيته تقتصر فقط وحصرياً على الملفات والمجلدات التي يقوم بإنشائها بنفسه (الملاحظات، الصور، الفيديوهات، التطبيقات، الملفات العامة).</p>
+                <h2 class="lang-ar-content">2. نطاق الوصول المحدود (Drive Scopes)</h2>
+                <h2 class="lang-en-content">2. Limited Access Scope (Drive Scopes)</h2>
+                
+                <p class="lang-ar-content">يطلب التطبيق صلاحية وصول محددة ومقيدة للغاية وهي <span class="highlight">"drive.file"</span>. هذا يعني قانونياً وتقنياً أن التطبيق **لا يمكنه** رؤية أو الوصول أو تعديل أي ملفات شخصية أو مستندات سابقة موجودة في حسابك على Google Drive. صلاحيته تقتصر فقط وحصرياً على الملفات والمجلدات التي يقوم بإنشائها بنفسه (الملاحظات، الصور، الفيديوهات، التطبيقات، الملفات العامة).</p>
+                <p class="lang-en-content">The application requests a highly specific and restricted access scope: <span class="highlight">"drive.file"</span>. This means, legally and technically, that the app **cannot** see, access, or modify any personal files or previous documents in your Google Drive account. Its permission is strictly limited to files and folders it creates itself (Notes, Images, Videos, Apps, General Files).</p>
             </section>
 
+            <!-- 3. Local Storage / التخزين المحلي والعمل دون اتصال -->
             <section>
-                <h2>3. التخزين المحلي والعمل دون اتصال (Offline Caching)</h2>
-                <p>يدعم التطبيق ميزة التخزين المؤقت المحلي (Local Cache) لتوفير تجربة عمل سلسة وسريعة حتى عند انقطاع الاتصال بالإنترنت:</p>
-                <ul>
+                <h2 class="lang-ar-content">3. التخزين المحلي والعمل دون اتصال (Offline Caching)</h2>
+                <h2 class="lang-en-content">3. Local Storage & Offline Caching</h2>
+                
+                <p class="lang-ar-content">يدعم التطبيق ميزة التخزين المؤقت المحلي (Local Cache) لتوفير تجربة عمل سلسة وسريعة حتى عند انقطاع الاتصال بالإنترنت:</p>
+                <p class="lang-en-content">The app supports Local Caching to provide a smooth and fast user experience even when offline:</p>
+                
+                <ul class="lang-ar-content">
                     <li>يتم حفظ الصور ومقاطع الفيديو والملفات مؤقتاً في ذاكرة الهاتف الداخلية (Cache) لتسريع التصفح.</li>
                     <li>يتم الاحتفاظ ببيانات الملاحظات محلياً بشكل مؤقت وتتم مزامنتها سحابياً فور استعادة الاتصال بالإنترنت.</li>
                     <li><span class="highlight">حماية الخصوصية الكاملة:</span> بمجرد قيام المستخدم بتسجيل الخروج من حسابه داخل التطبيق، يتم فوراً وتلقائياً مسح كافة الملفات الكاش (Cache) والملاحظات المؤقتة المخزنة في جهازك لضمان عدم بقاء أي أثر لبياناتك الشخصية على الهاتف.</li>
                 </ul>
+                <ul class="lang-en-content">
+                    <li>Images, videos, and files are temporarily cached in the device's internal storage (Cache) for faster browsing.</li>
+                    <li>Note data is kept locally and automatically synced to the cloud once the connection is restored.</li>
+                    <li><span class="highlight">Complete Privacy Protection:</span> As soon as you log out of the app, all cached files (Cache) and temporary notes are immediately and automatically wiped from your device to ensure no trace of your personal data remains on the phone.</li>
+                </ul>
             </section>
 
+            <!-- 4. Storage & Safe Zone / مساحة التخزين السحابية ومنطقة الأمان -->
             <section>
-                <h2>4. مساحة التخزين السحابية ومنطقة الأمان (Safe Zone)</h2>
-                <p>يتم تخزين جميع بياناتك بشكل مباشر وآمن في حسابك الخاص على Google Drive دون تدخل أي خوادم خارجية تابعة لنا:</p>
-                <ul>
+                <h2 class="lang-ar-content">4. مساحة التخزين السحابية ومنطقة الأمان (Safe Zone)</h2>
+                <h2 class="lang-en-content">4. Cloud Storage & Safe Zone</h2>
+                
+                <p class="lang-ar-content">يتم تخزين جميع بياناتك بشكل مباشر وآمن في حسابك الخاص على Google Drive دون تدخل أي خوادم خارجية تابعة لنا:</p>
+                <p class="lang-en-content">All your data is stored directly and securely in your own Google Drive account without any external server interaction:</p>
+                
+                <ul class="lang-ar-content">
                     <li>التطبيق يقرأ إحصائيات التخزين مباشرة من مساحتك في جوجل درايف لعرضها بدقة.</li>
                     <li><span class="highlight">منطقة الأمان (500MB):</span> في حال اقتراب مساحة التخزين السحابية الخاصة بك من الامتلاء التام، يقوم التطبيق بتفعيل "منطقة أمان" خاصة بحجم 500 ميجابايت مخصصة فقط للملاحظات النصية، لضمان استمرار قدرتك على حفظ أفكارك وكتاباتك الهامة حتى في الحالات الحرجة لامتلاء المساحة بالملفات الكبيرة.</li>
                 </ul>
-            </section>
-
-            <section>
-                <h2>5. تشفير الملاحظات برمز PIN والحماية القصوى</h2>
-                <p>يوفر التطبيق مستويات أمان وحماية متقدمة للغاية لحماية الملاحظات الحساسة من المتطفلين:</p>
-                <ul>
-                    <li><span class="highlight">تشفير الطرفين (Encryption):</span> عند تفعيل التشفير، يتم تشفير نصوص ومحتويات الملاحظات داخل جهازك باستخدام مفاتيح خاصة بك قبل رفعها إلى درايف، مما يجعلها غير قابلة للقراءة تماماً لأي شخص آخر حتى لو تمكن من الوصول لحساب درايف الخاص بك.</li>
-                    <li><span class="highlight">قفل الملاحظات (Note Lock):</span> يتيح لك التطبيق قفل ملاحظات فردية محددة برمز حماية شخصي (PIN)، بحيث لا يمكن فتحها أو قراءتها إلا بعد إدخال الرمز الصحيح محلياً.</li>
+                <ul class="lang-en-content">
+                    <li>The app reads storage statistics directly from your Google Drive account to display them accurately.</li>
+                    <li><span class="highlight">Safe Zone (500MB):</span> If your cloud storage is near full, the app activates a 500MB "Safe Zone" reserved exclusively for text notes, ensuring you can always save your critical ideas and written thoughts even during high disk consumption.</li>
                 </ul>
             </section>
 
+            <!-- 5. Encryption & PIN / تشفير الملاحظات برمز PIN والحماية القصوى -->
             <section>
-                <h2>6. مشاركة البيانات مع طرف ثالث</h2>
-                <p>نحن لا نملك خوادم تخزين خارجية ولا نقوم بجمع أو بيع أو تأجير أو مشاركة أي من بياناتك أو ملفاتك أو معلوماتك الشخصية مع أي طرف ثالث أو أي جهات إعلانية تحت أي ظرف من الظروف. كل التفاعلات البرمجية والملفات تتم مباشرة بين هاتفك وسحابة Google Drive الرسمية والآمنة.</p>
+                <h2 class="lang-ar-content">5. تشفير الملاحظات برمز PIN والحماية القصوى</h2>
+                <h2 class="lang-en-content">5. Encryption & PIN Protection</h2>
+                
+                <p class="lang-ar-content">يوفر التطبيق مستويات أمان وحماية متقدمة للغاية لحماية الملاحظات الحساسة من المتطفلين:</p>
+                <p class="lang-en-content">The app provides advanced security levels to protect sensitive notes from unauthorized access:</p>
+                
+                <ul class="lang-ar-content">
+                    <li><span class="highlight">تسفير الطرفين (Encryption):</span> عند تفعيل التشفير، يتم تشفير نصوص ومحتويات الملاحظات داخل جهازك باستخدام مفاتيح خاصة بك قبل رفعها إلى درايف، مما يجعلها غير قابلة للقراءة تماماً لأي شخص آخر.</li>
+                    <li><span class="highlight">قفل الملاحظات (Note Lock):</span> يتيح لك التطبيق قفل ملاحظات فردية محددة برمز حماية شخصي (PIN)، بحيث لا يمكن فتحها أو قراءتها إلا بعد إدخال الرمز الصحيح محلياً.</li>
+                </ul>
+                <ul class="lang-en-content">
+                    <li><span class="highlight">Client-Side Encryption:</span> When enabled, note contents are encrypted on your device using your private keys before upload, making them completely unreadable to anyone else.</li>
+                    <li><span class="highlight">Note Lock:</span> You can lock individual notes with a personal PIN code, ensuring they cannot be accessed or read without entering the correct PIN.</li>
+                </ul>
             </section>
 
+            <!-- 6. Third-Party Sharing / مشاركة البيانات مع طرف ثالث -->
             <section>
-                <h2>7. التغييرات في سياسة الخصوصية</h2>
-                <p>قد نقوم بتحديث سياسة الخصوصية هذه دورياً تماشياً مع الميزات الجديدة التي نضيفها للتطبيق لحمايتك. ننصح بمراجعة هذه الصفحة بشكل مستمر. تم تحديث هذه السياسة وتطبيقها رسمياً في مايو 2026.</p>
+                <h2 class="lang-ar-content">6. مشاركة البيانات مع طرف ثالث</h2>
+                <h2 class="lang-en-content">6. Third-Party Data Sharing</h2>
+                
+                <p class="lang-ar-content">نحن لا نملك خوادم تخزين خارجية ولا نقوم بجمع أو بيع أو تأجير أو مشاركة أي من بياناتك أو ملفاتك أو معلوماتك الشخصية مع أي طرف ثالث أو أي جهات إعلانية تحت أي ظرف من الظروف. كل التفاعلات البرمجية والملفات تتم مباشرة بين هاتفك وسحابة Google Drive الرسمية والآمنة.</p>
+                <p class="lang-en-content">We do not own external storage servers and do not collect, sell, rent, or share any of your data, files, or personal information with third parties or advertisers under any circumstances. All interactions and file transfers occur directly between your phone and Google Drive's official, secure cloud.</p>
+            </section>
+
+            <!-- 7. Changes / التغييرات في سياسة الخصوصية -->
+            <section>
+                <h2 class="lang-ar-content">7. التغييرات في سياسة الخصوصية</h2>
+                <h2 class="lang-en-content">7. Changes to the Policy</h2>
+                
+                <p class="lang-ar-content">قد نقوم بتحديث سياسة الخصوصية هذه دورياً تماشياً مع الميزات الجديدة التي نضيفها للتطبيق لحمايتك. ننصح بمراجعة هذه الصفحة بشكل مستمر. تم تحديث هذه السياسة وتطبيقها رسمياً في مايو 2026.</p>
+                <p class="lang-en-content">We may update this privacy policy periodically in line with new features we add to protect you. We advise checking this page regularly. This policy was last officially updated in May 2026.</p>
             </section>
         </div>
 
         <footer>
-            &copy; 2026 Cyber Note - جميع الحقوق محفوظة.
+            <span class="lang-ar-content">&copy; 2026 Cyber Note - جميع الحقوق محفوظة.</span>
+            <span class="lang-en-content">&copy; 2026 Cyber Note - All Rights Reserved.</span>
         </footer>
     </div>
+
+    <!-- كود الجافا سكربت للتبديل السلس بين اللغتين -->
+    <script>
+        function setLanguage(lang) {
+            const htmlTag = document.documentElement;
+            const btnAr = document.getElementById('btn-ar');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'ar') {
+                htmlTag.setAttribute('lang', 'ar');
+                htmlTag.setAttribute('dir', 'rtl');
+                btnAr.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                htmlTag.setAttribute('lang', 'en');
+                htmlTag.setAttribute('dir', 'ltr');
+                btnEn.classList.add('active');
+                btnAr.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
