@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية | Cyber Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #00c6ff;
+            --accent-grad: linear-gradient(90deg, #00c6ff, #0072ff);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 92%;
+            margin: 40px 0;
+        }
+
+        /* زر العودة للموقع الرسمي للتوافق مع شروط جوجل */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 198, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(0, 198, 255, 0.03);
+        }
+
+        .back-link:hover {
+            background: rgba(0, 198, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+            background: var(--accent-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 25px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        h2::before {
+            content: '';
+            width: 5px;
+            height: 22px;
+            background: var(--accent-grad);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 1.02rem;
+            text-align: justify;
+            margin: 12px 0 0 0;
+        }
+
+        ul {
+            margin: 10px 0 0 0;
+            padding-right: 20px;
+            color: var(--text-dim);
+        }
+
+        li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .card { padding: 25px; }
+            header h1 { font-size: 2.2rem; }
+            body { padding: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- رابط التوافق مع شروط جوجل للربط بين الرئيسية والسياسة -->
+        <a href="https://arc56a.github.io/" class="back-link">
+            <span>&rarr;</span> العودة للموقع الرسمي لـ Cyber Note
+        </a>
+
+        <header>
+            <h1>Cyber Note</h1>
+            <p>سياسة الخصوصية والأمان وحماية البيانات</p>
+        </header>
+
+        <div class="card">
+            <section>
+                <h2>1. مقدمة</h2>
+                <p>نحن في <span class="highlight">Cyber Note</span> نضع خصوصية المستخدم الفردية وأمان بياناته الرقمية على رأس أولوياتنا. هذا المستند يوضح بشكل شفاف كيف يتعامل التطبيق مع بياناتك، ويوضح طبيعة الصلاحيات الحساسة المطلوبة، وميزات حماية الخصوصية التي قمنا ببنائها وتكاملها مع سحابة Google Drive.</p>
+            </section>
+
+            <section>
+                <h2>2. نطاق الوصول المحدود (Drive Scopes)</h2>
+                <p>يطلب التطبيق صلاحية وصول محددة ومقيدة للغاية وهي <span class="highlight">"drive.file"</span>. هذا يعني قانونياً وتقنياً أن التطبيق **لا يمكنه** رؤية أو الوصول أو تعديل أي ملفات شخصية أو مستندات سابقة موجودة في حسابك على Google Drive. صلاحيته تقتصر فقط وحصرياً على الملفات والمجلدات التي يقوم بإنشائها بنفسه (الملاحظات، الصور، الفيديوهات، التطبيقات، الملفات العامة).</p>
+            </section>
+
+            <section>
+                <h2>3. التخزين المحلي والعمل دون اتصال (Offline Caching)</h2>
+                <p>يدعم التطبيق ميزة التخزين المؤقت المحلي (Local Cache) لتوفير تجربة عمل سلسة وسريعة حتى عند انقطاع الاتصال بالإنترنت:</p>
+                <ul>
+                    <li>يتم حفظ الصور ومقاطع الفيديو والملفات مؤقتاً في ذاكرة الهاتف الداخلية (Cache) لتسريع التصفح.</li>
+                    <li>يتم الاحتفاظ ببيانات الملاحظات محلياً بشكل مؤقت وتتم مزامنتها سحابياً فور استعادة الاتصال بالإنترنت.</li>
+                    <li><span class="highlight">حماية الخصوصية الكاملة:</span> بمجرد قيام المستخدم بتسجيل الخروج من حسابه داخل التطبيق، يتم فوراً وتلقائياً مسح كافة الملفات الكاش (Cache) والملاحظات المؤقتة المخزنة في جهازك لضمان عدم بقاء أي أثر لبياناتك الشخصية على الهاتف.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. مساحة التخزين السحابية ومنطقة الأمان (Safe Zone)</h2>
+                <p>يتم تخزين جميع بياناتك بشكل مباشر وآمن في حسابك الخاص على Google Drive دون تدخل أي خوادم خارجية تابعة لنا:</p>
+                <ul>
+                    <li>التطبيق يقرأ إحصائيات التخزين مباشرة من مساحتك في جوجل درايف لعرضها بدقة.</li>
+                    <li><span class="highlight">منطقة الأمان (500MB):</span> في حال اقتراب مساحة التخزين السحابية الخاصة بك من الامتلاء التام، يقوم التطبيق بتفعيل "منطقة أمان" خاصة بحجم 500 ميجابايت مخصصة فقط للملاحظات النصية، لضمان استمرار قدرتك على حفظ أفكارك وكتاباتك الهامة حتى في الحالات الحرجة لامتلاء المساحة بالملفات الكبيرة.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. تشفير الملاحظات برمز PIN والحماية القصوى</h2>
+                <p>يوفر التطبيق مستويات أمان وحماية متقدمة للغاية لحماية الملاحظات الحساسة من المتطفلين:</p>
+                <ul>
+                    <li><span class="highlight">تشفير الطرفين (Encryption):</span> عند تفعيل التشفير، يتم تشفير نصوص ومحتويات الملاحظات داخل جهازك باستخدام مفاتيح خاصة بك قبل رفعها إلى درايف، مما يجعلها غير قابلة للقراءة تماماً لأي شخص آخر حتى لو تمكن من الوصول لحساب درايف الخاص بك.</li>
+                    <li><span class="highlight">قفل الملاحظات (Note Lock):</span> يتيح لك التطبيق قفل ملاحظات فردية محددة برمز حماية شخصي (PIN)، بحيث لا يمكن فتحها أو قراءتها إلا بعد إدخال الرمز الصحيح محلياً.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. مشاركة البيانات مع طرف ثالث</h2>
+                <p>نحن لا نملك خوادم تخزين خارجية ولا نقوم بجمع أو بيع أو تأجير أو مشاركة أي من بياناتك أو ملفاتك أو معلوماتك الشخصية مع أي طرف ثالث أو أي جهات إعلانية تحت أي ظرف من الظروف. كل التفاعلات البرمجية والملفات تتم مباشرة بين هاتفك وسحابة Google Drive الرسمية والآمنة.</p>
+            </section>
+
+            <section>
+                <h2>7. التغييرات في سياسة الخصوصية</h2>
+                <p>قد نقوم بتحديث سياسة الخصوصية هذه دورياً تماشياً مع الميزات الجديدة التي نضيفها للتطبيق لحمايتك. ننصح بمراجعة هذه الصفحة بشكل مستمر. تم تحديث هذه السياسة وتطبيقها رسمياً في مايو 2026.</p>
+            </section>
+        </div>
+
+        <footer>
+            &copy; 2026 Cyber Note - جميع الحقوق محفوظة.
+        </footer>
+    </div>
+</body>
+</html>
