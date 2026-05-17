@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شروط الخدمة | Terms of Service | Cyber Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #00c6ff;
+            --accent-grad: linear-gradient(90deg, #00c6ff, #0072ff);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 92%;
+            margin: 40px 0;
+        }
+
+        /* شريط التحكم العلوي */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* زر العودة للموقع الرسمي */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 198, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(0, 198, 255, 0.03);
+        }
+
+        .back-link:hover {
+            background: rgba(0, 198, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* مبدل اللغة الأنيق */
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-grad);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+            background: var(--accent-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 28px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 25px;
+            transition: opacity 0.4s ease;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        h2::before {
+            content: '';
+            width: 5px;
+            height: 22px;
+            background: var(--accent-grad);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 1.02rem;
+            text-align: justify;
+            margin: 12px 0 0 0;
+        }
+
+        ul {
+            margin: 10px 0 0 0;
+            padding-right: 20px;
+            color: var(--text-dim);
+        }
+
+        li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* إعدادات اتجاه اللغة الإنجليزية */
+        html[lang="en"] body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html[lang="en"] h2::before {
+            order: -1;
+        }
+
+        html[lang="en"] ul {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        /* إخفاء المحتوى بناءً على اللغة المحددة */
+        [lang="en"] .lang-ar-content { display: none !important; }
+        [lang="ar"] .lang-en-content { display: none !important; }
+
+        @media (max-width: 600px) {
+            .card { padding: 25px; }
+            header h1 { font-size: 2.2rem; }
+            body { padding: 10px 0; }
+            .top-bar { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <!-- رابط العودة للموقع الرسمي -->
+            <a href="https://amm56d.github.io/privacy-policy-cyber-note/" class="back-link" id="backLink">
+                <span class="lang-ar-content">&rarr; العودة للموقع الرسمي</span>
+                <span class="lang-en-content">&larr; Return to Official Site</span>
+            </a>
+
+            <!-- مبدل اللغة تفاعلي وسلس -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('ar')" id="btn-ar">العربية</button>
+                <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">English</button>
+            </div>
+        </div>
+
+        <header>
+            <h1>Cyber Note</h1>
+            <p class="lang-ar-content">شروط وأحكام الخدمة</p>
+            <p class="lang-en-content">Terms & Conditions of Service</p>
+        </header>
+
+        <div class="card">
+            <!-- 1. Acceptance of Terms / قبول الشروط -->
+            <section>
+                <h2 class="lang-ar-content">1. قبول شروط الاستخدام</h2>
+                <h2 class="lang-en-content">1. Acceptance of Terms</h2>
+                
+                <p class="lang-ar-content">باستخدامك وتثبيتك لتطبيق <span class="highlight">Cyber Note</span>، فإنك تقر وتوافق بشكل كامل على الالتزام بشروط الخدمة هذه وجميع القوانين واللوائح المعمول بها. إذا كنت لا توافق على هذه الشروط، يرجى التوقف عن استخدام التطبيق فوراً.</p>
+                <p class="lang-en-content">By installing and using the <span class="highlight">Cyber Note</span> application, you fully acknowledge and agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree to these terms, please discontinue using the application immediately.</p>
+            </section>
+
+            <!-- 2. Description of Service / وصف الخدمة -->
+            <section>
+                <h2 class="lang-ar-content">2. وصف الخدمة</h2>
+                <h2 class="lang-en-content">2. Description of Service</h2>
+                
+                <p class="lang-ar-content">تطبيق <span class="highlight">Cyber Note</span> هو برنامج شخصي ومستقل مخصص لكتابة وتدوين الملاحظات وإدارة الملفات الرقمية. يتكامل التطبيق برمجياً وبشكل مباشر مع مساحة التخزين السحابية الشخصية الخاصة بك في Google Drive لحفظ ومزامنة الملاحظات والوسائط بأمان كامل.</p>
+                <p class="lang-en-content"><span class="highlight">Cyber Note</span> is a personal and independent note-taking and digital file management application. It programmatically integrates directly with your personal Google Drive cloud storage to securely save and synchronize notes and media files.</p>
+            </section>
+
+            <!-- 3. Data Ownership / ملكية البيانات والسيطرة الكاملة -->
+            <section>
+                <h2 class="lang-ar-content">3. ملكية البيانات والسيطرة الكاملة</h2>
+                <h2 class="lang-en-content">3. Data Ownership & User Control</h2>
+                
+                <p class="lang-ar-content">جميع البيانات والملاحظات والصور ومقاطع الفيديو والملفات التي تقوم بإنشائها أو رفعها باستخدام التطبيق هي **ملكك بالكامل وتظل تحت سيطرتك المطلقة**:</p>
+                <p class="lang-en-content">All data, notes, images, videos, and files you create or upload using the app are **entirely yours and remain under your absolute control**:</p>
+                
+                <ul class="lang-ar-content">
+                    <li>لا نملك أي خوادم تخزين خارجية لبياناتك، فكل شيء يتم رفعه مباشرة إلى مساحتك في Google Drive.</li>
+                    <li>أنت المسؤول الوحيد عن الحفاظ على سرية وحماية حساب جوجل الخاص بك.</li>
+                    <li>يمكنك حذف جميع بياناتك نهائياً في أي وقت من داخل التطبيق أو من لوحة تحكم درايف.</li>
+                </ul>
+                <ul class="lang-en-content">
+                    <li>We do not own external storage servers; everything is uploaded directly to your personal Google Drive storage.</li>
+                    <li>You are solely responsible for maintaining the security and confidentiality of your Google account.</li>
+                    <li>You can permanently delete all your data at any time from within the app or directly from Google Drive.</li>
+                </ul>
+            </section>
+
+            <!-- 4. Google Drive Sync / تكامل خدمات جوجل درايف -->
+            <section>
+                <h2 class="lang-ar-content">4. تكامل واستخدام خدمات Google Drive</h2>
+                <h2 class="lang-en-content">4. Google Drive Integration & Scopes</h2>
+                
+                <p class="lang-ar-content">يعتمد التطبيق على بروتوكولات Google OAuth الرسمية للاتصال بحسابك:</p>
+                <p class="lang-en-content">The app relies on official Google OAuth protocols to connect to your account:</p>
+                
+                <ul class="lang-ar-content">
+                    <li>يستخدم التطبيق صلاحية <span class="highlight">"drive.file"</span> الحساسة والآمنة لضمان عدم وصول التطبيق إلا للملفات التي ينشئها هو فقط.</li>
+                    <li>يخضع استخدامك لخدمة المزامنة السحابية لشروط وأحكام الخدمة وسياسة الخصوصية الخاصة بشركة **Google**.</li>
+                </ul>
+                <ul class="lang-en-content">
+                    <li>The app uses the highly secure <span class="highlight">"drive.file"</span> scope to ensure it only accesses the files it generates.</li>
+                    <li>Your use of the cloud sync service is subject to the Terms of Service and Privacy Policy of **Google** company.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Disclaimers / إخلاء المسؤولية وحدودها -->
+            <section>
+                <h2 class="lang-ar-content">5. إخلاء المسؤولية وحدودها</h2>
+                <h2 class="lang-en-content">5. Disclaimer of Warranties</h2>
+                
+                <p class="lang-ar-content">يتم تقديم التطبيق للمستخدمين **"كما هو" (As Is)** وبكامل ميزاته الحالية دون أي ضمانات صريحة أو ضمنية من أي نوع:</p>
+                <p class="lang-en-content">The application is provided to users **"As Is"** with all its current features without any express or implied warranties of any kind:</p>
+                
+                <ul class="lang-ar-content">
+                    <li>لا نتحمل أي مسؤولية قانونية أو مالية عن فقدان أو تلف البيانات نتيجة لخطأ في الاستخدام، أو بسبب مشاكل برمجية أو تقنية خارجة عن إرادتنا في خوادم Google Drive.</li>
+                    <li>ننصح دائماً بالتأكد من استقرار اتصالك بالإنترنت عند إجراء عمليات المزامنة الكبيرة.</li>
+                </ul>
+                <ul class="lang-en-content">
+                    <li>We assume no legal or financial liability for any data loss or damage caused by user error or technical issues beyond our control on Google Drive servers.</li>
+                    <li>We highly recommend ensuring a stable internet connection when performing large synchronization operations.</li>
+                </ul>
+            </section>
+
+            <!-- 6. Policy Changes / التعديلات والتغييرات -->
+            <section>
+                <h2 class="lang-ar-content">6. تعديل وتغيير الشروط</h2>
+                <h2 class="lang-en-content">6. Modifications to Terms</h2>
+                
+                <p class="lang-ar-content">نحتفظ بالحق في تحديث وتعديل شروط الخدمة هذه في أي وقت لتعكس التحديثات التقنية والقانونية للتطبيق. استمرارك في استخدام التطبيق بعد نشر أي تعديلات يعتبر موافقة وقبولاً صريحاً منك بالشروط المحدثة.</p>
+                <p class="lang-en-content">We reserve the right to update and modify these Terms of Service at any time to reflect technical and legal updates. Your continued use of the app after any changes are published constitutes your explicit agreement and acceptance of the updated terms.</p>
+            </section>
+        </div>
+
+        <footer>
+            <span class="lang-ar-content">&copy; 2026 Cyber Note - جميع الحقوق محفوظة.</span>
+            <span class="lang-en-content">&copy; 2026 Cyber Note - All Rights Reserved.</span>
+        </footer>
+    </div>
+
+    <!-- كود الجافا سكربت للتبديل السلس بين اللغتين -->
+    <script>
+        function setLanguage(lang) {
+            const htmlTag = document.documentElement;
+            const btnAr = document.getElementById('btn-ar');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'ar') {
+                htmlTag.setAttribute('lang', 'ar');
+                htmlTag.setAttribute('dir', 'rtl');
+                btnAr.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                htmlTag.setAttribute('lang', 'en');
+                htmlTag.setAttribute('dir', 'ltr');
+                btnEn.classList.add('active');
+                btnAr.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
