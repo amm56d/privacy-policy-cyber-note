@@ -34,18 +34,35 @@
         }
         p {
             color: var(--text-dim); font-size: 1.1rem; line-height: 1.8;
-            margin: 20px 0 30px 0; text-align: center;
+            margin: 20px 0 35px 0; text-align: center;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .btn {
-            display: inline-block; padding: 12px 30px;
+            display: inline-block; padding: 12px 24px;
             background: linear-gradient(90deg, #00c6ff, #0072ff);
             color: white; text-decoration: none; font-weight: bold;
             border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
             transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        .btn.btn-alt {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            box-shadow: none;
         }
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 198, 255, 0.5);
+        }
+        .btn.btn-alt:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
         }
     </style>
 </head>
@@ -57,7 +74,10 @@
             <br><br>
             <strong>Cyber Note</strong> is a secure personal notes and file manager designed to organize your daily notes, photos, videos, and apps with advanced encryption and direct cloud synchronization using your own Google Drive storage.
         </p>
-        <a href="privacy-policy.html" class="btn">سياسة الخصوصية | Privacy Policy</a>
+        <div class="btn-group">
+            <a href="privacy-policy.html" class="btn">سياسة الخصوصية | Privacy Policy</a>
+            <a href="terms-of-service.html" class="btn btn-alt">شروط الخدمة | Terms of Service</a>
+        </div>
     </div>
 </body>
 </html>
